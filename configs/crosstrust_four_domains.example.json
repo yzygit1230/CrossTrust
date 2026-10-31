@@ -1,0 +1,41 @@
+{
+  "image_size": 256,
+  "model": {
+    "base_channels": 32,
+    "max_channels": 320,
+    "depth": 5,
+    "normalization": "instance",
+    "dropout": 0.0
+  },
+  "augmentation": {
+    "horizontal_flip": 0.5,
+    "vertical_flip": 0.5,
+    "rotate90": 0.75,
+    "rotation_degrees": 12,
+    "scale": [0.9, 1.1],
+    "translate": 0.04,
+    "brightness": 0.12,
+    "contrast": 0.18,
+    "saturation": 0.18,
+    "hue": 0.035,
+    "gamma": 0.15,
+    "noise_std": 0.015,
+    "blur_probability": 0.15,
+    "blur_radius": 0.8,
+    "shear_degrees": 4,
+    "stain_probability": 0.65,
+    "stain_alpha": 0.08,
+    "stain_beta": 0.025,
+    "stain_cross": 0.025,
+    "cutout_probability": 0.22,
+    "cutout_count": [1, 2],
+    "cutout_size": [0.035, 0.1],
+    "cutout_fill": 1.0
+  },
+  "datasets": [
+    {"name": "CPM17", "root": "data/CPM17", "use_existing_validation": true},
+    {"name": "MoNuSeg", "root": "data/MoNuSeg", "use_existing_validation": true},
+    {"name": "PanNuke", "root": "data/PanNuke", "organ_from_suffix": true, "use_existing_validation": true},
+    {"name": "PUMA", "root": "data/PUMA", "organ": "melanoma", "use_existing_validation": true}
+  ]
+}
